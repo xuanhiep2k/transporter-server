@@ -54,13 +54,6 @@ public class DriverController {
 
     @GetMapping("/search")
     public List<Driver> driversByType(@RequestParam(value = "type") String[] type) {
-        String string = "Kinh Doanh,Cong Nghe,Ky Thuat";
-        String[] strings = string.split(",");
-        List<String> list = new ArrayList<>();
-        for (String s : strings) {
-            list.add(s);
-        }
-        each(list,(index, item) -> System.out.println(item));
         List<Driver> driverList = new ArrayList<>();
         List<Driver> drivers = new ArrayList<>();
         driverRepo.findAll().forEach(i -> driverList.add(i));
